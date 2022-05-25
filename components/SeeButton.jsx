@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import MonthlyWidget from './MonthlyWidget.jsx';
 
-
 function SeeMoreText(props){
   if (props.state == "See Less"){
       return (        
