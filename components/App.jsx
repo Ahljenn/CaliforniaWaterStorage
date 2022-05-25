@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import '../styles/App.css';
-import SeeMoreText from './SeeMoreText.jsx';
+import SeeInfo from './SeeInfo.jsx';
 
 function App() {
 
@@ -41,8 +41,8 @@ function App() {
       </div>
     </main>
 
-    <div class="charts">
-      <SeeMoreText state={buttonState}/>
+    <div className="charts">
+      <SeeInfo state={buttonState}/>
     </div>
     
   </>
