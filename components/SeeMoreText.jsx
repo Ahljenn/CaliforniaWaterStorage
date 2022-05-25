@@ -19,7 +19,7 @@ function SeeMoreText(props){
         </section>
     )  
   }
-  return (<></>);
+  return (<></>); //Send nothing if state is "See More"
 }
 
 export default SeeMoreText;
