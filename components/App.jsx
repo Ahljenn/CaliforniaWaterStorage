@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../styles/App.css';
-import SeeButton from './SeeButton.jsx';
-import SeeMoreText from './SeeButton.jsx';
+import SeeMoreText from './SeeMoreText.jsx';
 
 function App() {
+
+  const [buttonState, setButtonState] = useState("See More");
+
+  function seeButtonHandler() {
+    setButtonState(buttonState == "See More" ? "See Less" : "See More");
+  }
+  
   return (
   <>
     <header>
@@ -19,7 +25,11 @@ function App() {
             California's water managers monitor the reservoirs carefully, and the state publishes daily data on reservoir storage.
           </p>
           
-          <SeeButton />
+      <button
+        className="see"
+        onClick={seeButtonHandler}>
+        {buttonState}
+      </button>
           
         </div>
 
@@ -28,14 +38,11 @@ function App() {
   "/>
           <figcaption>Lake Oroville in the 2012-2014 drought. Image credit Justin Sullivan, from The Atlatic article Dramatic Photos of California's Historic Drought.</figcaption>
         </div>
-
-
-
-  
-        
       </main>
 
-    
+      <div>
+        <SeeMoreText state={buttonState}/>
+      </div>
   </>
   );
 }

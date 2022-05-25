@@ -22,27 +22,4 @@ function SeeMoreText(props){
   return (<></>);
 }
 
-function SeeButton() {
-
-  const [buttonState, setButtonState] = useState("See More");
-
-  function seeButtonHandler() {
-    setButtonState(buttonState == "See More" ? "See Less" : "See More");
-  }
-
-  return (
-    <>
-      <button
-        className="see"
-        onClick={seeButtonHandler}>
-        {buttonState}
-      </button>
-
-      <div>
-        <SeeMoreText state={buttonState}/>
-      </div>
-    </>
-  );
-}
-
-export default SeeButton;
+export default SeeMoreText;
