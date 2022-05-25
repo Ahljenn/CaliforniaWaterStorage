@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { sendPostRequest, sendGetRequest } from './ajax.jsx';
-import BartChart from './BarChart.jsx';
+import BarChart from './BarChart.jsx';
 
 function WaterData(){  
   
@@ -9,11 +9,13 @@ function WaterData(){
   //Initialize on load of this component
   useEffect(async() => {
     let newWaterData = await sendPostRequest("/query/postCDECData");
-    console.log(newWaterData);
-    // setWaterData(newWaterData);
+    setWaterData(newWaterData);
   }, [])
   
-  return (<></>);
+  return (
+    <>
+      <BarChart data={waterData} />;
+    </>);
 }
 
 export default WaterData;
