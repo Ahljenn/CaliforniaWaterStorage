@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/App.css';
+import SeeButton from './SeeButton.jsx';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
         California's water managers monitor the reservoirs carefully, and the state publishes daily data on reservoir storage.
       </p>
 
-      
+      <SeeButton />
       
 
 
