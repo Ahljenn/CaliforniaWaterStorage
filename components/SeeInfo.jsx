@@ -1,6 +1,5 @@
 import React from 'react';
-import WaterData from './WaterData.jsx';
-import MonthPicker from './MonthPicker.jsx';
+import { WaterData, MonthPicker } from './WaterData.jsx';
 
 function SeeInfo(props){
   if (props.state == "See Less"){
