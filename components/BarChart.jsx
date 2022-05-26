@@ -4,7 +4,7 @@ import { Chart } from 'chart.js';
 function BarChart(props) {
   return (
       <>
-
+       <p>Bar chart here --------------</p> 
       </>
     )
 }
