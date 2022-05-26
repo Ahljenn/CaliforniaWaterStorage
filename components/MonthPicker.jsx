@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 function MonthPicker(){
 
   const [date, setDate] = useState({
-    month: '',
-    year: ''
+    month: 12,
+    year: 2022
   });
-  
+
   return (
       <div>
         <MonthYearPicker
@@ -16,8 +16,8 @@ function MonthPicker(){
           selectedYear={date.year}
           minYear={2000}
           maxYear={2022}
-          onChangeYear={year => setDate({ year: year })}
-          onChangeMonth={month => setDate({ month: month })}
+          onChangeYear={year => setDate({ month: date.month, year: year })}
+          onChangeMonth={month => setDate({ month: month, year: date.year })}
         />
         <h3>Selected month: {date.month}</h3>
         <h3>Selected year: {date.year}</h3>
