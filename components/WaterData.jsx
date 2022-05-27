@@ -4,18 +4,13 @@ import BarChart from './BarChart.jsx';
 import MonthYearPicker from 'react-month-year-picker';
 import PropTypes from 'prop-types';
 
-let data = {};
-
 export function MonthPicker(){
 
   const [date, setDate] = useState({
-    month: 12,
+    month: 4,
     year: 2022
   });
 
-  useEffect(() => {
-    data = date;
-  },[date])
 
   return (
       <div>
@@ -42,12 +37,12 @@ export function WaterData(){
   useEffect(async() => {
     let newWaterData = await sendPostRequest("/query/postCDECData", { month: 4, year: 2022 }); //Default to this date
     setWaterData(newWaterData);
-  }, [])
+    console.log(waterData);
+  }, []);
   
   return (
     <>
       <BarChart data={waterData} />;
-      <h1>TEST: {data.month}-{data.year}</h1>
     </>
   );
 }
