@@ -26,14 +26,11 @@ function WaterData(props){
   if(waterData != "None"){
     return (
     <>
-      <h1>Month:{props.state.month}</h1>
-      <h1>Year:{props.state.year}</h1>
-      {console.log(waterData, "inside component")}
       <DataChart data={waterData} />
     </>
   );
   } else {
-    return(<>Loading...</>);
+    return(<h1>Loading...</h1>);
   }
 }
 

@@ -4,6 +4,8 @@ import { Bar } from "react-chartjs-2";
 
 function DataChart(props) {
 
+  const DIVISOR = 1000000;
+  
   //Total capacity of reservior of each region
   const REGIONS =  {"Shasta": 4552000,
                     "Oroville": 3537577,
@@ -24,11 +26,13 @@ function DataChart(props) {
       label: "Total reservior",
       data: Object.keys(REGIONS).map((key) => REGIONS[key]),
       backgroundColor: 'rgb(120,199,227)',
+      order: 1
     },
     {
       label: "Current amount",
       data: secondData,
       backgroundColor: 'rgb(66,145,152)',
+      order: 0
     }
   ];
   
@@ -54,7 +58,12 @@ function DataChart(props) {
       }
     },
     y: {
-      stacked: true,
+      ticks: {
+        callback: function(value, index, ticks) {
+          return value / DIVISOR;
+        }
+      },
+      beginAtZero: true,
       grid: {
         display: false
         }
