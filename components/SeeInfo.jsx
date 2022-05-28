@@ -1,13 +1,20 @@
-import React from 'react';
-import { WaterData, MonthPicker } from './WaterData.jsx';
+import React, { useState } from 'react';
+import WaterData from './WaterData.jsx';
+import MonthPicker from './MonthPicker.jsx';
 
 function SeeInfo(props){
+
+  const [dateState, setDateState] = useState({
+    month: 4,
+    year: 2022,
+  });
+  
   if (props.state == "See Less"){
       return (        
         <section className="main-container">
 
           <div className="charts">
-            <WaterData />
+            <WaterData state={dateState} />
           </div>
 
           <section className="sub-container">
@@ -16,7 +23,7 @@ function SeeInfo(props){
             </p>
 
             
-            <MonthPicker />
+            <MonthPicker state={dateState} update={setDateState}/>
           </section>
         </section>
     )  

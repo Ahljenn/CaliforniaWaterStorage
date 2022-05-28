@@ -1,12 +1,8 @@
 import React from 'react';
-import { Chart } from 'chart.js';
+import Chart from 'chart.js/auto';
 
-function BarChart(props) {
-  return (
-      <>
-       <p>Bar chart here --------------</p> 
-      </>
-    )
+function BarChart({ chartData }, { options }) {
+  return <Bar data={chartData} options={options} />;
 }
 
 export default BarChart;
