@@ -92,13 +92,3 @@ span.caption{
   font-weight: 600;
   font-size: 16px;
 }
-
-
-.month-year-picker .year-picker .controls {
-  color: var(--main);
-}
-
-.month-year-picker .month-picker div {
-  background-color: var(--secondary);
-  color: var(--main);
-}
