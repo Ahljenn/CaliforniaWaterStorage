@@ -38,17 +38,13 @@ function WaterData(props){
     console.log("Date state changed in WaterData component")
   }, [props.state])
 
-  // Display certain things 
+  // Display certain messages or chart depending on state of waterData
   if (waterData == "None") {
-    return(<h1>Loading...</h1>);
+    return(<h1 class="temp-msg">Loading...</h1>);
   } else if (waterData == "No data available"){
-      return(<h1>{waterData}</h1>);
+    return(<h1 class="temp-msg">{waterData}</h1>);
   } else {
-    return (
-    <>
-      <DataChart data={waterData} />
-    </> 
-  );
+    return (<DataChart data={waterData} />);
   }
 }
 

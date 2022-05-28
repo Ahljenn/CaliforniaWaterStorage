@@ -60,7 +60,7 @@ function DataChart(props) {
     y: {
       ticks: {
         callback: function(value, index, ticks) {
-          return value / DIVISOR;
+          if(value > 1) return value / DIVISOR;
         }
       },
       beginAtZero: true,
