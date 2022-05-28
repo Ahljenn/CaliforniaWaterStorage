@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 //Maps a new array only with stationId and value
 async function waterPostReq(dateObj){
   let waterData = await sendPostRequest("/query/postCDECData", dateObj); 
-  let filteredData = waterData.map(({stationId, value}) => ({stationId,value}));
+  let filteredData = waterData.map(({value}) => ({value}));
   return filteredData;
 }
 
@@ -26,8 +26,8 @@ function WaterData(props){
   if(waterData != "None"){
     return (
     <>
-      Month:{props.state.month}
-      Year:{props.state.year}
+      <h1>Month:{props.state.month}</h1>
+      <h1>Year:{props.state.year}</h1>
       {console.log(waterData, "inside component")}
       <DataChart data={waterData} />
     </>

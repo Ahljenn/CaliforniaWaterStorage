@@ -5,19 +5,17 @@ import { Bar } from "react-chartjs-2";
 function DataChart(props) {
 
   //Total capacity of reservior of each region
-  const REGIONS =  {SHA: 4552000,
-                    ORO: 3537577,
-                    CLE: 2447650,
-                    NML: 2400000,
-                    LUS: 1062000,
-                    DNP: 2030000,
-                    BER: 1602000 }
-
-  let labels = [];
+  const REGIONS =  {"Shasta": 4552000,
+                    "Oroville": 3537577,
+                    "Trinity Lake": 2447650,
+                    "New Melones": 2400000,
+                    "San Luis": 1062000,
+                    "Don Pedro": 2030000,
+                    "Berryessa": 1602000}
+  
   let secondData = [];
   
   for (let i = 0; i < props.data.length; ++i) {
-    labels.push(props.data[i].stationId);
     secondData.push(props.data[i].value);
   }
 
@@ -25,17 +23,17 @@ function DataChart(props) {
     {
       label: "Total reservior",
       data: Object.keys(REGIONS).map((key) => REGIONS[key]),
-      backgroundColor: 'rgb(255,0,255)',
+      backgroundColor: 'rgb(120,199,227)',
     },
     {
-      label: "Secondary",
+      label: "Current amount",
       data: secondData,
-      backgroundColor: 'rgb(0, 255, 255)'
+      backgroundColor: 'rgb(66,145,152)',
     }
   ];
   
   let userData = {
-    labels: labels,
+    labels: Object.keys(REGIONS).map((key) => key),
     datasets: dataSet,
   };
 
