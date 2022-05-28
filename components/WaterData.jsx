@@ -10,7 +10,6 @@ import PropTypes from 'prop-types';
 async function waterPostReq(dateObj){
   let waterData = await sendPostRequest("/query/postCDECData", dateObj); 
   let filteredData = waterData.map(({stationId, value}) => ({stationId,value}));
-  console.log(filteredData);
   return filteredData;
 }
 
@@ -21,14 +20,21 @@ function WaterData(props){
   //Send a post request for retrieve data only when the date state changes / not on inital render
   useEffect(async() => {
     setWaterData(await waterPostReq(props.state));
+    console.log("Date state changed in WaterData component")
   }, [props.state])
 
-  return (
+  if(waterData != "None"){
+    return (
     <>
       Month:{props.state.month}
       Year:{props.state.year}
+      {console.log(waterData, "inside component")}
+      <DataChart data={waterData} />
     </>
   );
+  } else {
+    return(<>Loading...</>);
+  }
 }
 
 export default WaterData;

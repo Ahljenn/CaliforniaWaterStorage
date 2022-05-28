@@ -38,7 +38,6 @@ a {
 }
 
 .charts {
-  background-color: hotpink;
   width: 100%;
 }
 
@@ -72,4 +71,9 @@ img {
 figcaption {
   font-weight: 400;
   font-size: 12px;
+}
+
+#chart-container {
+  width: 300px;
+  height: 400px;
 }

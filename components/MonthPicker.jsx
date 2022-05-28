@@ -18,8 +18,6 @@ function MonthPicker(props){
           onChangeYear={year => updateDate({month: props.state.month, year: year })}
           onChangeMonth={month => updateDate({ month: month, year: props.state.year })}
         />
-        <h3>Selected month: {props.state.month}</h3>
-        <h3>Selected year: {props.state.year}</h3>
       </div>
     );
 }
