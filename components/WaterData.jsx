@@ -8,9 +8,24 @@ import PropTypes from 'prop-types';
 //Post response request returns water data
 //Maps a new array only with stationId and value
 async function waterPostReq(dateObj){
-  let waterData = await sendPostRequest("/query/postCDECData", dateObj); 
-  let filteredData = waterData.map(({value}) => ({value}));
-  return filteredData;
+  let waterDataFromPost = await sendPostRequest("/query/postCDECData", dateObj); 
+  let valid = true;
+
+  // -9999 means data does not exist for that month
+  waterDataFromPost.forEach(item => {
+    if(item.value == -9999){
+      valid = false;
+    }
+    console.log(item);
+  })
+
+  //Return data only if the inputs are 'valid' and the number of items greater than 0
+  if (valid && waterDataFromPost.length > 0){
+    let filteredData = waterDataFromPost.map(({value}) => ({value}));
+    return filteredData;
+  }
+
+  return "No data available";
 }
 
 function WaterData(props){  
@@ -23,14 +38,17 @@ function WaterData(props){
     console.log("Date state changed in WaterData component")
   }, [props.state])
 
-  if(waterData != "None"){
+  // Display certain things 
+  if (waterData == "None") {
+    return(<h1>Loading...</h1>);
+  } else if (waterData == "No data available"){
+      return(<h1>{waterData}</h1>);
+  } else {
     return (
     <>
       <DataChart data={waterData} />
-    </>
+    </> 
   );
-  } else {
-    return(<h1>Loading...</h1>);
   }
 }
 
