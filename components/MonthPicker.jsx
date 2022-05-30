@@ -5,9 +5,13 @@ function MonthPicker(props){
 
   let updateDate = props.update;
 
-  if ()
-
-
+  //If same month is selected, do not update state
+  //Needed so double POST requests are not sent to server
+  function checkMonth(month){
+    if(month != props.state.month){
+       updateDate({ month: month, year: props.state.year });
+    }
+  }
   
   return (
     /*This is from MonthYearPicker library*/
@@ -20,7 +24,7 @@ function MonthPicker(props){
           minYear={2000}
           maxYear={2022}
           onChangeYear={year => updateDate({month: props.state.month, year: year })}
-          onChangeMonth={month => updateDate({ month: month, year: props.state.year })}
+          onChangeMonth={month => checkMonth(month)}
         />
       </div>
     );
