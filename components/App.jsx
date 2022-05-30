@@ -41,7 +41,7 @@ function App() {
       </div>
     </main>
 
-    <div className="charts">
+    <div className="info-container">
       <SeeInfo state={buttonState}/>
     </div>
     

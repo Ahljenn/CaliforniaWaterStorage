@@ -73,7 +73,7 @@ function DataChart(props) {
   
   return (
     <div id="chart-container">
-      <Bar options={options} data={userData}/>
+      <Bar options={options} data={userData} />
     </div>
   );
 }
