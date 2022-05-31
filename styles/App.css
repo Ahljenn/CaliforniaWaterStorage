@@ -113,6 +113,10 @@ span.caption{
   margin-top: 10px;
 }
 
+.month-year-picker .year-picker {
+  color: var(--main);
+}
+
 @media screen and (max-width: 1000px) {
   #chart-container {
     width: 75%;
