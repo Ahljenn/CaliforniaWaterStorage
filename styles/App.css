@@ -6,6 +6,10 @@
   --secondary: rgb(120,199,227);
 }
 
+body {
+  overflow-y: scroll;
+}
+
 main {
   font-family: "Inter", sans-serif;
   display: flex;
