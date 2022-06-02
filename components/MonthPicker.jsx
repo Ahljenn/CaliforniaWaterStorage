@@ -41,7 +41,6 @@ function MonthPicker(props){
             updateDate({month: props.state.month, year: year })
             hideWidget()
           }}
-
           onChangeMonth={month => {
             checkMonth(month)
             hideWidget()
@@ -52,9 +51,10 @@ function MonthPicker(props){
   } else {
     return(
       <>
-        <h2>Change month</h2>
+        <h2 class="month-update-text">Change month:</h2>
         <button 
           onClick={showWidget}
+          class="month-picker-button"
         >
           {months[props.state.month - 1]+" "+props.state.year}
         </button>
