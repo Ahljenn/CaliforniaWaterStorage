@@ -26,7 +26,7 @@ function SeeInfo(props){
 
             
             <MonthPicker state={dateState} update={setDateState}/>
-
+  
             
           </section>
         </section>

@@ -38,6 +38,7 @@ main {
 
 a {
   text-decoration: none;
+  color: var(--secondary);
 }
 
 .info-container {
@@ -82,7 +83,7 @@ figcaption {
 
 #chart-container {
   width: 80%;
-  height: 100%;
+  height: 500px;
   margin-left: 100px;
 }
 
@@ -104,9 +105,10 @@ span.caption{
   font-family: "Inter", sans-serif;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   width: 90%;
   margin-right: 100px;
+  margin-left: 100px;
 }
 
 .charts {
@@ -121,10 +123,27 @@ span.caption{
   color: var(--main);
 }
 
+.month-update-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--main);
+}
+
+.month-picker-button {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: rgb(128,128,128);
+  background-color: rgb(255,255,255);
+  padding: 10px 175px 10px 15px;
+  border: solid 1px;
+}
+
 @media screen and (max-width: 1000px) {
   #chart-container {
     width: 75%;
-    height: 95%;
+    height: 500px;
   }
 }
 
@@ -167,6 +186,7 @@ span.caption{
     display: flex;
     align-items: center;
     margin-right: 0;
+    margin-left: 0;
     width: 100%;
   }
 
@@ -179,6 +199,11 @@ span.caption{
 
    #chart-container {
    margin: 0;
+   min-width: 300px;
+  }
+
+  .month-picker-button {
+    white-space: nowrap;
   }
 }
 
@@ -200,5 +225,13 @@ span.caption{
     height: 400px;
   }
 
+  #chart-container {
+    height: 450px;
+    width: 275px;
+  }
+
+  .month-picker-button {
+    padding: 10px 130px 10px 15px;
+  }
 }
 
